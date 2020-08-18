@@ -1,0 +1,174 @@
+using System;
+
+namespace Statki
+{
+    class Program
+    {
+        static void DrawMainScreen(int[,] statki_gracz1)
+        {
+            char[] litery = new char[10];
+            litery[0] = 'A';
+            litery[1] = 'B';
+            litery[2] = 'C';
+            litery[3] = 'D';
+            litery[4] = 'E';
+            litery[5] = 'F';
+            litery[6] = 'G';
+            litery[7] = 'H';
+            litery[8] = 'I';
+            litery[9] = 'J';
+            int licznik_liter = 0;
+            int licznik_tablicy = 0;
+            for (int i = 0; i < 21; i++) {
+                
+                    if (i == 0)
+                    {
+                        Console.Write(" ");
+                        for (int j = 0; j < 10; j++) {
+                            Console.Write("|");
+                            Console.Write(j);
+                        }
+                    Console.Write("|");
+                    Console.WriteLine();
+                    }
+                    if (i % 2 == 0 && i != 0 && i !=20) {
+                        for(int j =0; j<10; j++)
+                        {
+                            Console.Write("-");
+                            Console.Write("+");
+                        }
+                    Console.Write("-|");
+                        Console.WriteLine();
+                    }
+                if (i % 2 != 0) {
+
+                    Console.Write(litery[licznik_liter]);
+                    for(int j=0; j<11; j++)
+                    {
+                        Console.Write("|");
+                        if(j>=0 && j<10)
+                        Console.Write(statki_gracz1[licznik_tablicy,j]); //tutaj wartości planszy 
+                    }
+                    Console.WriteLine();
+                    licznik_liter++;
+                    licznik_tablicy++;
+                }
+                if (i == 20)
+                {
+                    for (int j = 0; j < 21; j++)
+                    {
+                        Console.Write("_");
+                    }
+                    Console.Write("|");
+                    Console.WriteLine();
+                }
+                
+            }
+            Console.ReadKey();
+        }
+        static string sprawdzanie_stakow(string tekst)
+        {
+            string s_wyjscie = "";
+            while (true)
+            {
+                Console.Write(tekst);
+                s_wyjscie = Console.ReadLine();
+                if (!string.IsNullOrEmpty(s_wyjscie) || s_wyjscie.Length==2 )
+                    break;
+                Console.WriteLine("Wartość nie może być pusta lub ma złą długość");
+            }
+            return s_wyjscie;
+        }
+        static void Stawianie_okrętów(int[,] statki) {
+            string lotniskowiec_poczatek = "";
+            string lotniskowiec_koniec = "";
+            string niszczyciel_poczatek = "";
+            string niszczyciel_koniec = "";
+            string krazownik_poczatek = "";
+            string krazownik_koniec = "";
+            string kuter_poczatek = "";
+            string kuter_koniec = "";
+            string ponton_bojowy_poczatek = "";
+            string ponton_bojowy_koniec = "";
+            while (true)
+            {
+                lotniskowiec_poczatek = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj początkową kratkę: ");
+                lotniskowiec_koniec = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj ostatnią kratkę: ");
+                if (lotniskowiec_koniec[0] == lotniskowiec_koniec[0] && lotniskowiec_koniec[1] - lotniskowiec_poczatek[1] == 5)
+                    break;
+                if (lotniskowiec_koniec[1] == lotniskowiec_koniec[1] && lotniskowiec_koniec[0] - lotniskowiec_poczatek[0] == 5)
+                    break;
+                Console.WriteLine("Statku nie podzielisz na kawałki!");
+            }
+            while (true)
+            {
+                lotniskowiec_poczatek = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj początkową kratkę: ");
+                lotniskowiec_koniec = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj ostatnią kratkę: ");
+                if (lotniskowiec_koniec[0] == lotniskowiec_koniec[0] && lotniskowiec_koniec[1] - lotniskowiec_poczatek[1] == 5)
+                    break;
+                if (lotniskowiec_koniec[1] == lotniskowiec_koniec[1] && lotniskowiec_koniec[0] - lotniskowiec_poczatek[0] == 5)
+                    break;
+                Console.WriteLine("Statku nie podzielisz na kawałki!");
+            }
+            while (true)
+            {
+                lotniskowiec_poczatek = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj początkową kratkę: ");
+                lotniskowiec_koniec = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj ostatnią kratkę: ");
+                if (lotniskowiec_koniec[0] == lotniskowiec_koniec[0] && lotniskowiec_koniec[1] - lotniskowiec_poczatek[1] == 5)
+                    break;
+                if (lotniskowiec_koniec[1] == lotniskowiec_koniec[1] && lotniskowiec_koniec[0] - lotniskowiec_poczatek[0] == 5)
+                    break;
+                Console.WriteLine("Statku nie podzielisz na kawałki!");
+            }
+            while (true)
+            {
+                lotniskowiec_poczatek = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj początkową kratkę: ");
+                lotniskowiec_koniec = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj ostatnią kratkę: ");
+                if (lotniskowiec_koniec[0] == lotniskowiec_koniec[0] && lotniskowiec_koniec[1] - lotniskowiec_poczatek[1] == 5)
+                    break;
+                if (lotniskowiec_koniec[1] == lotniskowiec_koniec[1] && lotniskowiec_koniec[0] - lotniskowiec_poczatek[0] == 5)
+                    break;
+                Console.WriteLine("Statku nie podzielisz na kawałki!");
+            }
+            while (true)
+            {
+                lotniskowiec_poczatek = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj początkową kratkę: ");
+                lotniskowiec_koniec = sprawdzanie_stakow("5-cio metrowy lotniskowiec podaj ostatnią kratkę: ");
+                if (lotniskowiec_koniec[0] == lotniskowiec_koniec[0] && lotniskowiec_koniec[1] - lotniskowiec_poczatek[1] == 5)
+                    break;
+                if (lotniskowiec_koniec[1] == lotniskowiec_koniec[1] && lotniskowiec_koniec[0] - lotniskowiec_poczatek[0] == 5)
+                    break;
+                Console.WriteLine("Statku nie podzielisz na kawałki!");
+            }
+            Console.Write("git");
+            Console.ReadKey();
+
+        }
+        static void Main(string[] args)
+        {
+            Console.Write("Podaj nick-name pierwszego gracza: ");
+            string gracz_1 = Console.ReadLine();
+            Console.Write("Podaj nick-name drugiego gracza: ");
+            string gracz_2 = Console.ReadLine();
+            int[,] statki_gracz1 = new int[10, 10];
+            int[,] statki_gracz2 = new int[10, 10];
+            string[,] strzały_gracz1 = new string[10, 10];
+            string[,] strzały_gracz2 = new string[10, 10];
+            for(int i=0; i < 9; i++)
+            {
+                for (int j = 0; j < 9; j++)
+                {
+                    statki_gracz1[i, j] = 0;
+                    statki_gracz2[i, j] = 0;
+                    strzały_gracz1[i, j] = " ";
+                    strzały_gracz2[i, j] = " ";
+                }
+            }
+            Console.Clear();
+            DrawMainScreen(statki_gracz1);
+            Stawianie_okrętów(statki_gracz1);
+            //Console.SetCursorPosition();
+            //Console.CurorVisible = false;
+        }
+    }
+}
